@@ -15,7 +15,7 @@ cnpm install
 ## Reference Documents
  
 * [First](https://docs.cocos.com/creator/3.0/manual/en/editor/extension/first.html) - Through this article, we will learn to create a Cocos Creator extension and execute a custom script through the extension.
-* [Menu](https://docs.cocos.com/creator/3.0/manual/en/editor/extension/contributions-menu.html) - There is a main menu bar at the top of the editor, which can be used in the extensions.
+* [Menu](https://docs.cocos.com/creator/3.0/manual/en/editor/extension/contributions-menu.html) - Click on this link to learn about how to expand the menu.
 
 ## Version 
 
