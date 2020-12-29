@@ -2,7 +2,7 @@
     "name": "cocos-base-template",
     "version": "1.0.0",
     "package_version": 2,
-    "description": "A plugin that contains the basic functionality",
+    "description": "A extension that contains the basic functionality",
     "main": "dist/main.js",
     "scripts": {
         "watch": "tsc -w",
@@ -86,6 +86,41 @@
                     "default": 1,
                     "message": "project-test-a-changed",
                     "label": "i18n:cocos-base-template.test-the-profile-of-project"
+                },
+                "test.b": {
+                    "default": 1,
+                    "message": "project-test-a-changed",
+                    "label": "i18n:cocos-base-template.test-the-profile-of-project"
+                }
+
+            }
+        },
+        "preferences":{
+            "properties":{
+                "test.a":{
+                    "ui":"ui-num-input"
+                }
+            }
+        },
+        "project":{
+            "test.a":{
+                "label":"test.a",
+                "content":{
+                    "test.a":{
+                        "ui":"ui-num-input"
+                    },
+                    "test.b":{
+                        "ui":"ui-num-input"
+                    }
+               
+                }
+            },
+            "test.b":{
+                "label":"test.b",
+                "content":{
+                    "test.b":{
+                        "ui":"ui-num-input"
+                    }
                 }
             }
         }
