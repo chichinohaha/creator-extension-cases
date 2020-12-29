@@ -103,7 +103,7 @@
             }
         },
         "project":{
-            "test.a":{
+            "tab1":{
                 "label":"test.a",
                 "content":{
                     "test.a":{
@@ -113,14 +113,6 @@
                         "ui":"ui-num-input"
                     }
                
-                }
-            },
-            "test.b":{
-                "label":"test.b",
-                "content":{
-                    "test.b":{
-                        "ui":"ui-num-input"
-                    }
                 }
             }
         }
