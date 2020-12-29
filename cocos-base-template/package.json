@@ -1,40 +1,103 @@
 {
-  "name": "cocos-base-example-template",
-  "version": "1.0.0",
-  "package_version": 2,
-  "description": "",
-  "main": "dist/main.js",
-  "scripts": {
-    "watch": "tsc -w",
-    "build": "tsc -b"
-  },
-  "keywords": [],
-  "author": "Cocos Creator",
-  "license": "MIT",
-  "contributions": {
-    "menu": [
-      {
-        "path": "extensions/base-example",
-        "label": "say hello",
-        "message": "say-hello"
-      }
-    ],
-    "messages": {
-      "say-hello": {
-        "methods": [
-          "say_hello"
-        ]
-      }
+    "name": "cocos-base-template",
+    "version": "1.0.0",
+    "package_version": 2,
+    "description": "A plugin that contains the basic functionality",
+    "main": "dist/main.js",
+    "scripts": {
+        "watch": "tsc -w",
+        "build": "tsc -b"
+    },
+    "keywords": [],
+    "author": "Cocos Creator",
+    "license": "MIT",
+    "contributions": {
+        "menu": [
+            {
+                "path": "extensions/i18n:cocos-base-template.base",
+                "label": "i18n:cocos-base-template.say-hello",
+                "message": "say-hello"
+            },
+            {
+                "path": "extensions/i18n:cocos-base-template.base",
+                "label": "i18n:cocos-base-template.add-project-test",
+                "message": "add-project-test-a"
+            },
+            {
+                "path": "extensions/i18n:cocos-base-template.base",
+                "label": "i18n:cocos-base-template.add-editor-test",
+                "message": "add-editor-test-a"
+            }
+        ],
+        "messages": {
+            "say-hello": {
+                "methods": [
+                    "say_hello"
+                ]
+            },
+            "add-project-test-a": {
+                "methods": [
+                    "add_project_test_a"
+                ]
+            },
+            "add-editor-test-a": {
+                "methods": [
+                    "add_editor_test_a"
+                ]
+            },
+            "project-test-a-changed": {
+                "methods": [
+                    "on_project_profile_changed"
+                ]
+            },
+            "editor-test-a-changed": {
+                "methods": [
+                    "on_editor_profile_changed"
+                ]
+            } 
+        },
+        "shortcuts": [
+            {
+                "message": "say-hello",
+                "win": "ctrl+a",
+                "mac": "cmd+a"
+            },
+            {
+                "message": "add-project-test-a",
+                "win": "ctrl+x",
+                "mac": "cmd+x"
+            },
+            {
+                "message": "add-editor-test-a",
+                "win": "ctrl+c",
+                "mac": "cmd+c"
+            }
+        ],
+        "profile": {
+            "editor": {
+                "test.a": {
+                    "default": 0,
+                    "message": "editor-test-a-changed",
+                    "label": "i18n:cocos-base-template.test-the-profile-of-editor"
+                }
+            },
+            "project": {
+                "test.a": {
+                    "default": 1,
+                    "message": "project-test-a-changed",
+                    "label": "i18n:cocos-base-template.test-the-profile-of-project"
+                }
+            }
+        }
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^0.2.2",
+        "@types/electron": "^1.6.10",
+        "@types/node": "^14.14.16",
+        "@typescript-eslint/eslint-plugin": "^4.11.0",
+        "@typescript-eslint/parser": "^4.11.0",
+        "eslint": "^7.16.0",
+        "glob-parent": "^5.1.1",
+        "typescript": "^4.1.3"
     }
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^0.2.2",
-    "@types/electron": "^1.6.10",
-    "@types/node": "^14.14.16",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
-    "eslint": "^7.16.0",
-    "glob-parent": "^5.1.1",
-    "typescript": "^4.1.3"
-  }
 }
