@@ -11,7 +11,7 @@ export function unload() {
 
 export const configs: Record<string, IBuildPlugin> = {
     '*': {
-        hooks: './web-hooks',
+        hooks: './hooks',
         options: {
             remoteAddress: {
                 label: 'i18n:cocos-build-template.options.remoteAddress',

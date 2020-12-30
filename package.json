@@ -1,0 +1,19 @@
+{
+  "name": "extensions",
+  "version": "1.0.0",
+  "description": "First,clone this repository to the cocos project or to the global extensions directory\r and then make a copy of @types for each example directory",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chichinohaha/creator-extension-cases.git"
+  },
+  "keywords": [],
+  "author": "Cocos Creator",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chichinohaha/creator-extension-cases/issues"
+  },
+  "homepage": "https://github.com/chichinohaha/creator-extension-cases#readme"
+}
