@@ -63,6 +63,7 @@ const releaseConfig = {
                 isCustomElement: tags => tags.startsWith('ui-'),
             },
             defaultLang: { script: 'ts' },
+            css: false,
         }),
         replace({
             /**
