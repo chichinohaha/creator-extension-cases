@@ -1,7 +1,7 @@
 import App from './App.vue';
 import store from './store';
 import Vue from 'vue';
-import { getTemplateFromHtml, getCSSFromVue } from '../../panel-utils';
+import { getCSSFromVue } from '../../panel-utils';
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
 
@@ -26,7 +26,7 @@ export const linsteners = {
  * @en Template of the panel
  * @zh 面板的内容
  */
-export const template = getTemplateFromHtml();
+export const template = '<div id=app></div>';
 
 /**
  * @en Style of the panel 

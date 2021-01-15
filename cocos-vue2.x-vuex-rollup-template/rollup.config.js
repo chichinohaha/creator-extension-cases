@@ -1,21 +1,21 @@
 import VuePlugin from 'rollup-plugin-vue';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
-import NodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
-import path from 'path';
+import path, { join } from 'path';
 import typescript from 'rollup-plugin-typescript2';
-import copy from 'rollup-plugin-copy';
 import { terser } from 'rollup-plugin-terser';
 import replace from '@rollup/plugin-replace';
 import { getInputs } from './build-utils/rollup-config-utils';
-
-
+import json from '@rollup/plugin-json';
+import url from '@rollup/plugin-url';
+import { outputDir } from './.editor.js';
+import del from 'rollup-plugin-delete';
 const debugConfig = {
     input: getInputs(),
     output: {
         format: 'cjs',
-        dir: path.resolve(__dirname, 'dist'),
+        dir: path.resolve(__dirname, outputDir),
         globals: { vue: 'Vue' },
     },
     plugins: [
@@ -28,16 +28,22 @@ const debugConfig = {
         typescript({
             tsconfig: path.resolve('tsconfig.json'),
         }),
-        NodeResolve(),
         commonjs(),
         postcss({
-            extract: path.resolve('dist/panels/css/all.css'),
+            extract: path.resolve(outputDir, 'panels/css/all.css'),
         }),
         babel(),
-        copy({
-            targets: [{ src: 'public/*', dest: 'dist/' }],
+        json(),
+        url({
+            limit:0,
+            fileName: '[dirname][name][extname]',
+            sourceDir: path.join(__dirname, 'src'),
+            include:['**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.txt'],
         }),
-
+        del({
+            'targets':outputDir + '/*',
+            runOnce:true,
+        }),
     ],
     /**
      * 
@@ -54,7 +60,7 @@ const releaseConfig = {
     input: getInputs(),
     output: {
         format: 'cjs',
-        dir: path.join(__dirname, 'dist'),
+        dir: path.join(__dirname, outputDir),
         globals: { vue: 'Vue' },
     },
     plugins: [
@@ -78,19 +84,26 @@ const releaseConfig = {
             tsconfig: path.resolve(__dirname, 'tsconfig.json'),
             check: false,
         }),
-        NodeResolve(),
+
         commonjs(),
         postcss({
-            extract: path.resolve(__dirname, 'dist/panels/css/all.css'),
+            extract: path.resolve(outputDir, 'panels/css/all.css'),
         }),
         babel(),
-        copy({
-            targets: [{ src: 'public/*', dest: 'dist/' }],
-        }),
         terser(),
+        json(),
 
+        url({
+            limit:0,
+            fileName: '[dirname][name][extname]',
+            sourceDir: path.join(__dirname, 'src'),
+            include:['**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.txt'],
+        }),
+        del({
+            'targets':outputDir + '/*',
+        }),
     ],
-    /**
+    /** 
      * 
      * @param {*} id 
      * @en Declare external modules to avoid generating external module scripts in directories
