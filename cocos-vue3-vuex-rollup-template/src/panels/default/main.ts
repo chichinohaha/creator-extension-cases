@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
-import { getTemplateFromHtml, getCSSFromVue } from '../../panel-utils';
+import { getCSSFromVue } from '../../panel-utils';
 
 /**
  * @en Listening to panel events
@@ -24,7 +24,7 @@ export const linsteners = {
  * @en Template of the panel
  * @zh 面板的内容
  */
-export const template = getTemplateFromHtml();
+export const template = '<div id=app></div>';
 
 /**
  * @en Style of the panel 
@@ -36,7 +36,7 @@ export const style = getCSSFromVue();
  * @en Selector of the panel
  * @zh 快捷选择器
  */
-export const $ = { app: "#app" };
+export const $ = { app: '#app' };
 
 /**
  * @en Hooks triggered when the panel is ready
