@@ -47,7 +47,7 @@ export function getInputs() {
                 pushIntoInput(custom);
             }
         }
-        const project = pkgjson.contributions.preferences;
+        const project = pkgjson.contributions.project;
         if (project) {
             const custom = project.custom;
             if (custom) {
